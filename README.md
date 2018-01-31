@@ -28,7 +28,7 @@ Requirements
 
 ## 2. Add Customer Service
 
-1. Add CustomerReviewService interface with 2 function:
+1. Add AdditionalCustomerReviewService interface with 2 function:
     1. ```int getCustomerReviewsBetween(double min, double max)```
     1. ```CustomerReviewModel addCustomerReview(Double rating, String headline, String comment, UserModel user, ProductModel product)```
 1. Add UtilityService:
@@ -40,5 +40,6 @@ Requirements
     1. ```CustomerReviewModel```
     1. ```ProductModel```
     1. ```UserModel```
-1. Implement CustomerReviewService with Class CustomerReviewServiceImpl
-    
+1. Implement AdditionalCustomerReviewService with Class AdditionalCustomerReviewServiceImpl
+
+## 3. Config XML

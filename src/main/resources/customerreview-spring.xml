@@ -30,7 +30,7 @@
 	<bean id="defaultCustomerReviewDao" class="de.hybris.platform.customerreview.dao.impl.DefaultCustomerReviewDao" parent="abstractItemDao" scope="tenant"/>
 
 	<alias alias="customerReviewService" name="customerReviewServiceImpl"/>
-	<bean id="customerReviewServiceImpl" class="org.hao.homedepot.service.CustomerReviewService" parent="customerReviewService" scope="tenant"/>
+	<bean id="customerReviewServiceImpl" class="org.hao.homedepot.service.AdditionalCustomerReviewService" parent="customerReviewService" scope="tenant"/>
 
 	<!-- system setup bean -->
 	<alias alias="customerReviewSystemSetup" name="defaultCustomerReviewSystemSetup"/>

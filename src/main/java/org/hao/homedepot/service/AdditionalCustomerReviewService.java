@@ -6,9 +6,9 @@ import org.hao.homedepot.model.UserModel;
 import org.springframework.stereotype.Service;
 
 @Service
-public interface CustomerReviewService {
+public interface AdditionalCustomerReviewService {
 
-    int getCustomerReviewsBetween(double min, double max);
+    int getCustomerReviewsBetween(ProductModel paramProductModel, double min, double max);
 
     CustomerReviewModel addCustomerReview(Double rating, String headline, String comment, UserModel user, ProductModel product);
 
