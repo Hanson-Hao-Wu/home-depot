@@ -1,11 +1,15 @@
 package org.hao.homedepot.service.impl;
 
+import de.hybris.platform.customerreview.jalo.CustomerReview;
+import de.hybris.platform.customerreview.jalo.CustomerReviewManager;
 import org.hao.homedepot.constant.ExceptionConstant;
 import org.hao.homedepot.exception.HomeDepotException;
 import org.hao.homedepot.model.CustomerReviewModel;
 import org.hao.homedepot.model.ProductModel;
 import org.hao.homedepot.model.UserModel;
 import org.hao.homedepot.service.CustomerReviewService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -15,6 +19,8 @@ public class CustomerReviewServiceImpl implements CustomerReviewService {
 
 	@Autowired
 	UtilityService utilityService;
+
+	Logger logger = LoggerFactory.getLogger(CustomerReviewServiceImpl.class);
 
 
 	@Override
@@ -33,7 +39,7 @@ public class CustomerReviewServiceImpl implements CustomerReviewService {
 			throw new HomeDepotException(ExceptionConstant.HAVE_CURSE_WORDS_EXCEPTION);
 		}
 
-		CustomerReview review = CustomerReviewManager.getInstance().createCustomerReview(rating, headline, comment, 
+		CustomerReview review = CustomerReviewManager.getInstance().createCustomerReview(rating, headline, comment,
 				(User)getModelService().getSource(user), (Product)getModelService().getSource(product));
 		
 		return (CustomerReviewModel)getModelService().get(review);
