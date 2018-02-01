@@ -1,6 +1,6 @@
 # home-depot
 
-Customer Review Exercise Overview
+## Customer Review Exercise Overview
 
 * In this exercise you will need to extend out of the box features.  
 * Do not overwrite or edit the Java source code files we provide in the “customerreviewserver.jar.src” folder  
@@ -9,7 +9,7 @@ Customer Review Exercise Overview
 * Tools you will need:
 * Your favourite text editor
 
-Requirements
+## Requirements
 
 1. Provide a way to get a product’s total number of customer reviews whose ratings are within a given range (inclusive).
 2. Add the following additional checks before creating a customer review:
@@ -42,4 +42,9 @@ Requirements
     1. ```UserModel```
 1. Implement AdditionalCustomerReviewService with Class AdditionalCustomerReviewServiceImpl
 
-## 3. Config XML
+## 3. Config XML for DI
+
+1. Add additionalCustomerReviewService bean
+1. Cause in the additionalCustomerReviewServiceImpl need to use the customerReviewService. Inject customerReviewService to this bean
+
+> In additionalCustomerReviewServiceImpl, the UtilityService used the annotation to implement DI 
